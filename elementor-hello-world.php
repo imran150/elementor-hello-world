@@ -111,7 +111,7 @@ final class Elementor_Hello_World {
 		}
 
 		// Once we get here, We have passed all validation checks so we can safely include our plugin
-		require_once( 'test-widget.php' );
+		require_once( 'plugin.php' );
 	}
 
 	/**
