@@ -1,0 +1,12 @@
+a{
+	text-decoration: none;
+	font-size: 16px;
+	color: #fff;
+	padding: 12px 25px;
+	border-radius: 5px;
+
+}
+a:hover{
+	background-color: blue;
+	transition: 0.4s;
+}

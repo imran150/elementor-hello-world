@@ -49,8 +49,18 @@ class Plugin {
 	 */
 	public function widget_scripts() {
 		wp_register_script( 'elementor-hello-world', plugins_url( '/assets/js/hello-world.js', __FILE__ ), [ 'jquery' ], false, true );
+		wp_register_script( 'js1', plugins_url( '/widgets/assets/js/slick/slick.min.js', __FILE__ ), [ 'jquery' ], false, true );
+		wp_register_script( 'js2', plugins_url( '/widgets/assets/js/slick/slick.main.js', __FILE__ ), [ 'jquery' ], false, true );
+	
 	}
-
+	public function widget_styles() {
+		wp_register_style( 'core1', plugins_url( '/widgets/core.css', __FILE__ ));
+		wp_register_style( 'core2', plugins_url( 'widgets/assets/css/style.css', __FILE__ ));
+		wp_register_style( 'core3', plugins_url( 'widgets/assets/css/slick.css', __FILE__ ));
+		wp_register_style( 'core4', plugins_url( 'widgets/assets/css/slick-theme.css', __FILE__ ));
+	
+	}
+	
 	/**
 	 * Editor scripts
 	 *
@@ -138,6 +148,12 @@ class Plugin {
 
 		// Register editor scripts
 		add_action( 'elementor/editor/after_enqueue_scripts', [ $this, 'editor_scripts' ] );
+
+
+		add_action( 'elementor/frontend/after_enqueue_styles', [ $this, 'widget_styles' ] );
+
+
+		
 		
 
 	}
